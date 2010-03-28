@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="example" namespace="/example" extends="struts-default">
+
+        <action name="HelloWorld" class="example.HelloWorld">
+            <result>/example/HelloWorld.jsp</result>
+        </action>
+        
+        <action name="PreLogin" class="example.PreLogin">
+            <result name="success">/example/Login.jsp</result>
+            <result name="input">/example/SuccessPasswordSent.jsp</result>
+            <result name="none">/example/PreLogin.jsp</result>
+        </action>
+        
+         <action name="LoginCIS" class="example.LoginCIS">
+            <result name="success">/example/main.jsp</result>
+            <result name="input">/example/Login.jsp</result>
+        </action>
+        
+         <action name="forgotPassword" class="example.forgotPassword">
+            <result name="success">/example/Login.jsp</result>
+            <result name="none">/example/FailPasswordSent.jsp</result>
+        </action>
+        
+        <action name="Search" class="example.Search">
+            <result>/example/Search.jsp</result>
+        </action>   
+        
+         <action name="Logout" class="example.Logout">
+            <result name="success">/example/PreLogin.jsp</result>
+        </action>
+        
+        <action name="ShowUserProfile" class="example.ShowUserProfile">
+            <result>/example/ShowUserProfile.jsp</result>
+        </action>
+        
+        <action name="ShowItemProfile" class="example.ShowItemProfile">
+            <result>/example/ShowItemProfile.jsp</result>
+        </action>
+        
+        <action name="NewUserLogin" class="example.LoginCIS">
+            <result name="success">/example/join.jsp</result>
+            <result name="input">/example/SuccessPasswordSent.jsp</result>
+        </action>
+        
+        <action name="join" class="example.join">
+    		<result name="success">/example/main.jsp</result>
+    		<result name="input">/example/join.jsp</result>
+    	</action>
+        
+        <action name="Ajax" class="example.verifyEmailID">
+            <result name="success">/example/Success.jsp</result>
+            <result name="input">/example/Login.jsp</result>
+            <result name="none">/example/Fail.jsp</result>
+        </action>
+        
+        <action name="PostItem" class="example.PostItem">
+            <result name="success">/example/PostItemStart.jsp</result>
+            <result name="input">/example/PostItemStart.jsp</result>
+        </action>
+        
+        <action name="DeleteItem" class="example.DeleteItem">
+            <result name="success">/example/DeleteItemStart.jsp</result>
+            <result name="input">/example/DeleteItemStart.jsp</result>
+        </action>
+        
+        <action name="sendTempPassword" class="example.sendTempPassword">
+            <result name="success">/example/SuccessPasswordSent.jsp</result>
+            <result name="input">/example/sendTempPassword.jsp</result>
+            <result name="none">/example/FailPasswordSent.jsp</result>
+        </action>
+        
+        <action name="PostItemStart" class="example.PostItemStart">
+            <result>/example/PostItemStart.jsp</result>
+        </action>
+        
+        <action name="DeleteItemStart" class="example.DeleteItemStart">
+            <result>/example/DeleteItemStart.jsp</result>
+        </action>
+        
+        <action name="ShowTextbookInfo" class="example.ShowTextbookInfo">
+            <result>/example/ShowTextbookInfo.jsp</result>
+        </action>
+        
+        <action name="ShowSearchResult" class="example.ShowSearchResult">
+            <result name="success">/example/ShowSearchResult.jsp</result>
+            <result name="input">/example/Search.jsp</result>
+        </action> 
+       
+       <action name="RequestItem" class="example.RequestItem">
+            <result>/example/RequestSuccess.jsp</result>
+        </action>
+        
+        <action name="ConfirmRequest" class="example.ConfirmRequest">
+            <result>/example/ConfirmRequest.jsp</result>
+        </action>
+        
+        <action name="ShowItemPortfolio" class="example.ShowItemPortfolio">
+            <result>/example/ShowItemPortfolio.jsp</result>
+        </action>
+        
+        <action name="EditProfile" class="example.EditProfile">
+            <result name="success">/example/EditProfile.jsp</result>
+            <result name="input">/example/EditProfile.jsp</result>
+        </action>
+        
+        <action name="ChangeProfile" class="example.ChangeProfile">
+            <result name="success">/example/EditProfile.jsp</result>
+            <result name="input">/example/EditProfile.jsp</result>
+        </action>
+        
+        <action name="test" class="example.test">
+            <result>/example/Search.jsp</result>
+        </action>
+
+        <action name="*" class="example.ExampleSupport">
+            <result>/example/{1}.jsp</result>
+        </action>
+
+        <!-- Add actions here -->
+    </package>
+</struts>
