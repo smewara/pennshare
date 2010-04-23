@@ -447,6 +447,10 @@
       <fileset dir="${web.home}"/>
     </copy>
 
+    <copy todir="${build.home}/example">
+	<fileset dir="${web.home}/example"/>
+    </copy>
+
     <!-- Copy external dependencies as required -->
     <!-- *** CUSTOMIZE HERE AS REQUIRED BY YOUR APPLICATION *** -->
     <mkdir  dir="${build.home}/WEB-INF/lib"/>
