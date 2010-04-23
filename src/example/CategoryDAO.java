@@ -38,7 +38,7 @@ public class CategoryDAO {
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			String url_connection = "jdbc:mysql://127.0.0.1:3306/appdev2?user=" + "appdev2" + "&password=" + "appdev2";
+			String url_connection = database_conn.getConnectionUrl();
 			con = DriverManager.getConnection(url_connection);
 			
 			if(con != null){

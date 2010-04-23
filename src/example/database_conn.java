@@ -26,7 +26,11 @@ public class database_conn {
 	private static Statement stmt, stmt1;
 	private static ArrayList<ArrayList<String>> return_results = new ArrayList<ArrayList<String>>();
 	private static ResultSet rs11 = null;
-	
+     
+     
+     public static String getConnectionUrl () {
+	  return url_connection;
+     }
 	/**
 	 * @param args
 	 */
