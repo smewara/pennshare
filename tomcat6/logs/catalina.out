@@ -1,0 +1,388 @@
+Apr 22, 2010 11:25:44 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/lib/jvm/java-6-openjdk/jre/lib/amd64/server:/usr/lib/jvm/java-6-openjdk/jre/lib/amd64:/usr/lib/jvm/java-6-openjdk/jre/../lib/amd64:/usr/java/packages/lib/amd64:/usr/lib/jni:/lib:/usr/lib
+Apr 22, 2010 11:25:44 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-8080
+Apr 22, 2010 11:25:44 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 674 ms
+Apr 22, 2010 11:25:44 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Apr 22, 2010 11:25:44 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.26
+Apr 22, 2010 11:25:44 PM org.apache.catalina.startup.HostConfig deployWAR
+INFO: Deploying web application archive PennShare-0.1-dev.war
+Apr 22, 2010 11:25:45 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFO: Parsing configuration file [struts-default.xml]
+Apr 22, 2010 11:25:45 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFO: Parsing configuration file [struts-plugin.xml]
+Apr 22, 2010 11:25:45 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFO: Parsing configuration file [struts.xml]
+Apr 22, 2010 11:25:45 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory examples
+Apr 22, 2010 11:25:45 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory docs
+Apr 22, 2010 11:25:45 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory manager
+Apr 22, 2010 11:25:46 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory host-manager
+Apr 22, 2010 11:25:46 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Apr 22, 2010 11:25:46 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-8080
+Apr 22, 2010 11:25:46 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Apr 22, 2010 11:25:46 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/16  config=null
+Apr 22, 2010 11:25:46 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 1616 ms
+Apr 22, 2010 11:26:13 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/lib/jvm/java-6-openjdk/jre/lib/amd64/server:/usr/lib/jvm/java-6-openjdk/jre/lib/amd64:/usr/lib/jvm/java-6-openjdk/jre/../lib/amd64:/usr/java/packages/lib/amd64:/usr/lib/jni:/lib:/usr/lib
+Apr 22, 2010 11:26:14 PM org.apache.coyote.http11.Http11Protocol init
+SEVERE: Error initializing endpoint
+java.net.BindException: Address already in use <null>:8080
+	at org.apache.tomcat.util.net.JIoEndpoint.init(JIoEndpoint.java:549)
+	at org.apache.coyote.http11.Http11Protocol.init(Http11Protocol.java:176)
+	at org.apache.catalina.connector.Connector.initialize(Connector.java:1014)
+	at org.apache.catalina.core.StandardService.initialize(StandardService.java:680)
+	at org.apache.catalina.core.StandardServer.initialize(StandardServer.java:795)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:524)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:548)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:261)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:413)
+Caused by: java.net.BindException: Address already in use
+	at java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:336)
+	at java.net.ServerSocket.bind(ServerSocket.java:336)
+	at java.net.ServerSocket.<init>(ServerSocket.java:202)
+	at java.net.ServerSocket.<init>(ServerSocket.java:158)
+	at org.apache.tomcat.util.net.DefaultServerSocketFactory.createSocket(DefaultServerSocketFactory.java:50)
+	at org.apache.tomcat.util.net.JIoEndpoint.init(JIoEndpoint.java:538)
+	... 12 more
+Apr 22, 2010 11:26:14 PM org.apache.catalina.startup.Catalina load
+SEVERE: Catalina.start
+LifecycleException:  Protocol handler initialization failed: java.net.BindException: Address already in use <null>:8080
+	at org.apache.catalina.connector.Connector.initialize(Connector.java:1016)
+	at org.apache.catalina.core.StandardService.initialize(StandardService.java:680)
+	at org.apache.catalina.core.StandardServer.initialize(StandardServer.java:795)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:524)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:548)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:261)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:413)
+Apr 22, 2010 11:26:14 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 621 ms
+Apr 22, 2010 11:26:14 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Apr 22, 2010 11:26:14 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.26
+Apr 22, 2010 11:26:14 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Deploying configuration descriptor manager.xml
+Apr 22, 2010 11:26:14 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Deploying configuration descriptor host-manager.xml
+Apr 22, 2010 11:26:14 PM org.apache.catalina.startup.HostConfig deployWAR
+INFO: Deploying web application archive PennShare-0.1-dev.war
+Apr 22, 2010 11:26:15 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFO: Parsing configuration file [struts-default.xml]
+Apr 22, 2010 11:26:15 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFO: Parsing configuration file [struts-plugin.xml]
+Apr 22, 2010 11:26:15 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFO: Parsing configuration file [struts.xml]
+Apr 22, 2010 11:26:15 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory examples
+Apr 22, 2010 11:26:15 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory docs
+Apr 22, 2010 11:26:15 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Apr 22, 2010 11:26:15 PM org.apache.coyote.http11.Http11Protocol start
+SEVERE: Error starting endpoint
+java.net.BindException: Address already in use <null>:8080
+	at org.apache.tomcat.util.net.JIoEndpoint.init(JIoEndpoint.java:549)
+	at org.apache.tomcat.util.net.JIoEndpoint.start(JIoEndpoint.java:565)
+	at org.apache.coyote.http11.Http11Protocol.start(Http11Protocol.java:203)
+	at org.apache.catalina.connector.Connector.start(Connector.java:1087)
+	at org.apache.catalina.core.StandardService.start(StandardService.java:534)
+	at org.apache.catalina.core.StandardServer.start(StandardServer.java:710)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:581)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:289)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:414)
+Caused by: java.net.BindException: Address already in use
+	at java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:336)
+	at java.net.ServerSocket.bind(ServerSocket.java:336)
+	at java.net.ServerSocket.<init>(ServerSocket.java:202)
+	at java.net.ServerSocket.<init>(ServerSocket.java:158)
+	at org.apache.tomcat.util.net.DefaultServerSocketFactory.createSocket(DefaultServerSocketFactory.java:50)
+	at org.apache.tomcat.util.net.JIoEndpoint.init(JIoEndpoint.java:538)
+	... 12 more
+Apr 22, 2010 11:26:15 PM org.apache.catalina.startup.Catalina start
+SEVERE: Catalina.start: 
+LifecycleException:  service.getName(): "Catalina";  Protocol handler start failed: java.net.BindException: Address already in use <null>:8080
+	at org.apache.catalina.connector.Connector.start(Connector.java:1094)
+	at org.apache.catalina.core.StandardService.start(StandardService.java:534)
+	at org.apache.catalina.core.StandardServer.start(StandardServer.java:710)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:581)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:289)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:414)
+Apr 22, 2010 11:26:15 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 1681 ms
+Apr 22, 2010 11:26:15 PM org.apache.catalina.core.StandardServer await
+SEVERE: StandardServer.await: create[8005]: 
+java.net.BindException: Address already in use
+	at java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:336)
+	at java.net.ServerSocket.bind(ServerSocket.java:336)
+	at java.net.ServerSocket.<init>(ServerSocket.java:202)
+	at org.apache.catalina.core.StandardServer.await(StandardServer.java:373)
+	at org.apache.catalina.startup.Catalina.await(Catalina.java:662)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:614)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:616)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:289)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:414)
+Apr 22, 2010 11:26:15 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-8080
+Apr 22, 2010 11:26:16 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Apr 22, 2010 11:26:16 PM org.apache.catalina.loader.WebappClassLoader clearThreadLocalMap
+SEVERE: A web application created a ThreadLocal with key of type [null] (value [com.opensymphony.xwork2.inject.ContainerImpl$10@6bab600f]) and a value of type [com.opensymphony.xwork2.inject.InternalContext[]] (value [[Lcom.opensymphony.xwork2.inject.InternalContext;@402fb002]) but failed to remove it when the web application was stopped. To prevent a memory leak, the ThreadLocal has been forcibly removed.
+Apr 22, 2010 11:26:16 PM org.apache.catalina.loader.WebappClassLoader clearThreadLocalMap
+SEVERE: A web application created a ThreadLocal with key of type [null] (value [com.opensymphony.xwork2.inject.ContainerImpl$10@7acc7439]) and a value of type [com.opensymphony.xwork2.inject.InternalContext[]] (value [[Lcom.opensymphony.xwork2.inject.InternalContext;@4e2892b]) but failed to remove it when the web application was stopped. To prevent a memory leak, the ThreadLocal has been forcibly removed.
+Apr 22, 2010 11:26:16 PM org.apache.catalina.loader.WebappClassLoader clearThreadLocalMap
+SEVERE: A web application created a ThreadLocal with key of type [null] (value [com.opensymphony.xwork2.inject.ContainerImpl$10@7acc7439]) and a value of type [com.opensymphony.xwork2.inject.InternalContext[]] (value [[Lcom.opensymphony.xwork2.inject.InternalContext;@349b688e]) but failed to remove it when the web application was stopped. To prevent a memory leak, the ThreadLocal has been forcibly removed.
+Apr 22, 2010 11:26:16 PM org.apache.catalina.connector.MapperListener destroy
+WARNING: Error unregistering MBeanServerDelegate
+java.lang.NullPointerException
+	at org.apache.catalina.connector.MapperListener.destroy(MapperListener.java:176)
+	at org.apache.catalina.connector.Connector.stop(Connector.java:1135)
+	at org.apache.catalina.core.StandardService.stop(StandardService.java:596)
+	at org.apache.catalina.core.StandardServer.stop(StandardServer.java:744)
+	at org.apache.catalina.startup.Catalina.stop(Catalina.java:648)
+	at org.apache.catalina.startup.Catalina$CatalinaShutdownHook.run(Catalina.java:692)
+Apr 22, 2010 11:26:16 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-8080
+Apr 22, 2010 11:26:16 PM org.apache.catalina.connector.Connector stop
+SEVERE: Coyote connector has not been started
+Apr 22, 2010 11:27:37 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [struts.valueStack]
+Apr 22, 2010 11:27:37 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger error
+SEVERE: Could not find action or result
+There is no Action mapped for namespace / and action name . - [unknown location]
+	at com.opensymphony.xwork2.DefaultActionProxy.prepare(DefaultActionProxy.java:178)
+	at org.apache.struts2.impl.StrutsActionProxy.prepare(StrutsActionProxy.java:61)
+	at org.apache.struts2.impl.StrutsActionProxyFactory.createActionProxy(StrutsActionProxyFactory.java:39)
+	at com.opensymphony.xwork2.DefaultActionProxyFactory.createActionProxy(DefaultActionProxyFactory.java:47)
+	at org.apache.struts2.dispatcher.Dispatcher.serviceAction(Dispatcher.java:467)
+	at org.apache.struts2.dispatcher.FilterDispatcher.doFilter(FilterDispatcher.java:467)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:636)
+Apr 22, 2010 11:27:41 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [struts.valueStack]
+Apr 22, 2010 11:27:41 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [org.apache.catalina.jsp_file]
+Apr 22, 2010 11:28:04 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [struts.valueStack]
+Apr 22, 2010 11:28:04 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger error
+SEVERE: Could not find action or result
+There is no Action mapped for namespace / and action name . - [unknown location]
+	at com.opensymphony.xwork2.DefaultActionProxy.prepare(DefaultActionProxy.java:178)
+	at org.apache.struts2.impl.StrutsActionProxy.prepare(StrutsActionProxy.java:61)
+	at org.apache.struts2.impl.StrutsActionProxyFactory.createActionProxy(StrutsActionProxyFactory.java:39)
+	at com.opensymphony.xwork2.DefaultActionProxyFactory.createActionProxy(DefaultActionProxyFactory.java:47)
+	at org.apache.struts2.dispatcher.Dispatcher.serviceAction(Dispatcher.java:467)
+	at org.apache.struts2.dispatcher.FilterDispatcher.doFilter(FilterDispatcher.java:467)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:636)
+Apr 22, 2010 11:28:10 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [struts.valueStack]
+Apr 22, 2010 11:28:10 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger error
+SEVERE: Could not find action or result
+There is no Action mapped for namespace / and action name . - [unknown location]
+	at com.opensymphony.xwork2.DefaultActionProxy.prepare(DefaultActionProxy.java:178)
+	at org.apache.struts2.impl.StrutsActionProxy.prepare(StrutsActionProxy.java:61)
+	at org.apache.struts2.impl.StrutsActionProxyFactory.createActionProxy(StrutsActionProxyFactory.java:39)
+	at com.opensymphony.xwork2.DefaultActionProxyFactory.createActionProxy(DefaultActionProxyFactory.java:47)
+	at org.apache.struts2.dispatcher.Dispatcher.serviceAction(Dispatcher.java:467)
+	at org.apache.struts2.dispatcher.FilterDispatcher.doFilter(FilterDispatcher.java:467)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:636)
+Apr 22, 2010 11:28:15 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [struts.valueStack]
+Apr 22, 2010 11:28:15 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger error
+SEVERE: Could not find action or result
+There is no Action mapped for namespace / and action name Index. - [unknown location]
+	at com.opensymphony.xwork2.DefaultActionProxy.prepare(DefaultActionProxy.java:178)
+	at org.apache.struts2.impl.StrutsActionProxy.prepare(StrutsActionProxy.java:61)
+	at org.apache.struts2.impl.StrutsActionProxyFactory.createActionProxy(StrutsActionProxyFactory.java:39)
+	at com.opensymphony.xwork2.DefaultActionProxyFactory.createActionProxy(DefaultActionProxyFactory.java:47)
+	at org.apache.struts2.dispatcher.Dispatcher.serviceAction(Dispatcher.java:467)
+	at org.apache.struts2.dispatcher.FilterDispatcher.doFilter(FilterDispatcher.java:467)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:636)
+Apr 22, 2010 11:28:18 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [struts.valueStack]
+Apr 22, 2010 11:28:18 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger error
+SEVERE: Could not find action or result
+There is no Action mapped for namespace / and action name PreLogin. - [unknown location]
+	at com.opensymphony.xwork2.DefaultActionProxy.prepare(DefaultActionProxy.java:178)
+	at org.apache.struts2.impl.StrutsActionProxy.prepare(StrutsActionProxy.java:61)
+	at org.apache.struts2.impl.StrutsActionProxyFactory.createActionProxy(StrutsActionProxyFactory.java:39)
+	at com.opensymphony.xwork2.DefaultActionProxyFactory.createActionProxy(DefaultActionProxyFactory.java:47)
+	at org.apache.struts2.dispatcher.Dispatcher.serviceAction(Dispatcher.java:467)
+	at org.apache.struts2.dispatcher.FilterDispatcher.doFilter(FilterDispatcher.java:467)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:636)
+Apr 22, 2010 11:28:23 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [struts.valueStack]
+Pre-Log-in start executing!!!
+Apr 22, 2010 11:28:23 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [org.apache.catalina.jsp_file]
+Apr 22, 2010 11:28:24 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [org.apache.catalina.jsp_file]
+Apr 22, 2010 11:28:24 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [templateDir]
+Apr 22, 2010 11:28:24 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [templateDir]
+Apr 22, 2010 11:28:24 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [theme]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [theme]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [templateDir]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [templateDir]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [theme]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [theme]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [.freemarker.Request]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [.freemarker.RequestParameters]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [templateDir]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [templateDir]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [theme]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [theme]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [templateDir]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [templateDir]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [theme]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [theme]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [templateDir]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [templateDir]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [theme]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [theme]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [templateDir]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [templateDir]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [theme]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [theme]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [templateDir]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [templateDir]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [theme]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [theme]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [templateDir]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [templateDir]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [theme]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [theme]
+Apr 22, 2010 11:28:25 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+WARNING: Could not find property [org.apache.catalina.jsp_file]
+Apr 22, 2010 11:29:56 PM org.apache.catalina.startup.HostConfig checkResources
+INFO: Undeploying context [/PennShare-0.1-dev]
+Apr 22, 2010 11:29:56 PM org.apache.catalina.loader.WebappClassLoader clearThreadLocalMap
+SEVERE: A web application created a ThreadLocal with key of type [null] (value [null]) and a value of type [com.opensymphony.xwork2.inject.InternalContext[]] (value [[Lcom.opensymphony.xwork2.inject.InternalContext;@2fd1cdf7]) but failed to remove it when the web application was stopped. To prevent a memory leak, the ThreadLocal has been forcibly removed.
+Apr 22, 2010 11:29:56 PM org.apache.catalina.loader.WebappClassLoader clearThreadLocalMap
+SEVERE: A web application created a ThreadLocal with key of type [null] (value [com.opensymphony.xwork2.inject.ContainerImpl$10@2ff11e0f]) and a value of type [com.opensymphony.xwork2.inject.InternalContext[]] (value [[Lcom.opensymphony.xwork2.inject.InternalContext;@7eec835f]) but failed to remove it when the web application was stopped. To prevent a memory leak, the ThreadLocal has been forcibly removed.
+Apr 22, 2010 11:29:56 PM org.apache.catalina.loader.WebappClassLoader clearThreadLocalMap
+SEVERE: A web application created a ThreadLocal with key of type [null] (value [com.opensymphony.xwork2.inject.ContainerImpl$10@2ff11e0f]) and a value of type [com.opensymphony.xwork2.inject.InternalContext[]] (value [[Lcom.opensymphony.xwork2.inject.InternalContext;@59a51312]) but failed to remove it when the web application was stopped. To prevent a memory leak, the ThreadLocal has been forcibly removed.
+Apr 22, 2010 11:29:56 PM org.apache.catalina.loader.WebappClassLoader clearThreadLocalMap
+SEVERE: A web application created a ThreadLocal with key of type [null] (value [com.opensymphony.xwork2.inject.ContainerImpl$10@2ff11e0f]) and a value of type [com.opensymphony.xwork2.inject.InternalContext[]] (value [[Lcom.opensymphony.xwork2.inject.InternalContext;@648730b8]) but failed to remove it when the web application was stopped. To prevent a memory leak, the ThreadLocal has been forcibly removed.
+Apr 22, 2010 11:29:56 PM org.apache.catalina.loader.WebappClassLoader clearThreadLocalMap
+SEVERE: A web application created a ThreadLocal with key of type [null] (value [com.opensymphony.xwork2.inject.ContainerImpl$10@2ff11e0f]) and a value of type [com.opensymphony.xwork2.inject.InternalContext[]] (value [[Lcom.opensymphony.xwork2.inject.InternalContext;@678fb397]) but failed to remove it when the web application was stopped. To prevent a memory leak, the ThreadLocal has been forcibly removed.
