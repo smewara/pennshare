@@ -129,8 +129,8 @@
   <property name="app.name"      value="PennShare"/>
   <property name="app.path"      value="/${app.name}"/>
   <property name="app.version"   value="0.1-dev"/>
-  <property name="build.home"    value="${basedir}/build"/>
   <property name="catalina.home" value="${basedir}/tomcat6"/> <!-- UPDATE THIS! -->
+  <property name="build.home"    value="${catalina.home}/webapps/PennShare"/> <!-- directly put it under tomcat -->
   <property name="dist.home"     value="${basedir}/dist"/>
   <property name="docs.home"     value="${basedir}/docs"/>
   <property name="manager.url"   value="http://localhost:8080/manager"/>
