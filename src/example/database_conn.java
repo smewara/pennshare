@@ -20,9 +20,16 @@ public class database_conn {
 
 	private static Connection con = null;
 	private static Connection con1 = null;
-	private static String username = "appdev2";
-	private static String password = "appdev2";
+     private static String username = "appdev2";
+     private static String password = "appdev2";
+
 	private static String url_connection = "jdbc:mysql://spam.seas.upenn.edu:3306/appdev2?user="+username+"&password="+password;
+
+	  {
+	       if (System.getenv().containsKey("PENNSHARE_JDBC"))
+		    url_connection = System.getenv().get("PENNSHARE_JDBC");
+	  }
+
 	private static Statement stmt, stmt1;
 	private static ArrayList<ArrayList<String>> return_results = new ArrayList<ArrayList<String>>();
 	private static ResultSet rs11 = null;
