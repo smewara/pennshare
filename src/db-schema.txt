@@ -11,44 +11,9 @@ CREATE TABLE categories (
   PRIMARY KEY  (categoryid)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
-
---
--- Table structure for table `courses`
---
-
-DROP TABLE IF EXISTS `courses`;
-CREATE TABLE `courses` (
-  `courseid` bigint(10) NOT NULL auto_increment,
-  `department` varchar(10) NOT NULL,
-  `code` varchar(10) NOT NULL,
-  PRIMARY KEY  (`courseid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Table structure for table `courseusestextbook`
---
-
-DROP TABLE IF EXISTS `courseusestextbook`;
-CREATE TABLE `courseusestextbook` (
-  `courseusestextbookid` bigint(10) NOT NULL,
-  `textbookid` bigint(10) NOT NULL,
-  `courseid` bigint(10) NOT NULL,
-  PRIMARY KEY  (`courseusestextbookid`),
-  KEY `textbookid` (`textbookid`),
-  KEY `courseid` (`courseid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Table structure for table `dvds`
---
-
-DROP TABLE IF EXISTS `dvds`;
-CREATE TABLE `dvds` (
-  `itemid` bigint(10) NOT NULL,
-  `actor` varchar(50) default NULL,
-  `genre` varchar(20) default NULL,
-  PRIMARY KEY  (`itemid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+-- manual categories..
+INSERT INTO categories (name) ("algorithms"),("mathematics"),
+	("software engineering");
 
 --
 -- Table structure for table `items`
@@ -56,14 +21,14 @@ CREATE TABLE `dvds` (
 
 DROP TABLE IF EXISTS `items`;
 CREATE TABLE `items` (
-  `itemid` bigint(10) NOT NULL auto_increment,
+  `itemid` integer NOT NULL auto_increment,
   `name` varchar(200) NOT NULL,
   `price` float default NULL,
   `duration` varchar(10) default NULL,
   `description` text,
-  `categoryid` bigint(50) NOT NULL,
-  `textbookid` bigint(10) default NULL,
-  `ownerid` bigint(50) NOT NULL,
+  `categoryid` integer NOT NULL,
+  `textbookid` integer default NULL,
+  `ownerid` integer NOT NULL,
   `createdate` date NOT NULL,
   `isactive` int(2) NOT NULL default '1',
   PRIMARY KEY  (`itemid`)
@@ -73,23 +38,13 @@ CREATE TABLE `items` (
 -- Table structure for table `seas`
 --
 
-DROP TABLE IF EXISTS `seas`;
-CREATE TABLE `seas` (
-  `seas_id` int(35) NOT NULL auto_increment,
-  `email` varchar(55) NOT NULL,
-  `first_name` varchar(50) NOT NULL,
-  `middle_name` varchar(50) default NULL,
-  `last_name` varchar(50) default NULL,
-  PRIMARY KEY  (`seas_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
 --
 -- Table structure for table `textbooks`
 --
 
 DROP TABLE IF EXISTS `textbooks`;
 CREATE TABLE `textbooks` (
-  `textbookid` bigint(10) NOT NULL auto_increment,
+  `textbookid` integer NOT NULL auto_increment,
   `isbn` bigint(20) default NULL,
   `coverimage` varchar(1000) default NULL,
   `title` varchar(200) NOT NULL,
@@ -100,27 +55,13 @@ CREATE TABLE `textbooks` (
 ) ENGINE=MyISAM AUTO_INCREMENT=76543429 DEFAULT CHARSET=utf8;
 
 --
--- Table structure for table `userborrowsitem`
---
-
-DROP TABLE IF EXISTS `userborrowsitem`;
-CREATE TABLE `userborrowsitem` (
-  `userid` bigint(10) NOT NULL,
-  `itemid` bigint(10) NOT NULL,
-  `startdate` date NOT NULL,
-  `deadline` date NOT NULL,
-  PRIMARY KEY  (`itemid`),
-  KEY `userid` (`userid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
 -- Table structure for table `userownsitem`
 --
 
 DROP TABLE IF EXISTS `userownsitem`;
 CREATE TABLE `userownsitem` (
-  `userid` bigint(10) NOT NULL,
-  `itemid` bigint(10) NOT NULL,
+  `userid` integer NOT NULL,
+  `itemid` integer NOT NULL,
   `createdate` date default NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -141,24 +82,12 @@ CREATE TABLE `userrequestsitem` (
 ) ENGINE=MyISAM AUTO_INCREMENT=79 DEFAULT CHARSET=utf8;
 
 --
--- Table structure for table `userreturnsitem`
---
-
-DROP TABLE IF EXISTS `userreturnsitem`;
-CREATE TABLE `userreturnsitem` (
-  `userid` bigint(10) NOT NULL,
-  `itemid` bigint(10) NOT NULL,
-  `returndate` date NOT NULL,
-  PRIMARY KEY  (`itemid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
 -- Table structure for table `users`
 --
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
-  `userid` bigint(10) NOT NULL auto_increment,
+  `userid` integer NOT NULL auto_increment,
   `name` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
