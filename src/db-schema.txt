@@ -1,14 +1,14 @@
-
 -- taken from mysqldump of the db on appdev2@spam.
 
 -- Table structure for table `categories`
 --
 
-DROP TABLE IF EXISTS `categories`;
-CREATE TABLE `categories` (
-  `categoryid` bigint(50) NOT NULL auto_increment,
-  `name` varchar(100) NOT NULL,
-  PRIMARY KEY  (`categoryid`)
+DROP TABLE IF EXISTS categories;
+
+CREATE TABLE categories (
+  categoryid integer NOT NULL auto_increment,
+  name varchar(100) NOT NULL,
+  PRIMARY KEY  (categoryid)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 
@@ -168,4 +168,5 @@ CREATE TABLE `users` (
   `trust` float NOT NULL,
   PRIMARY KEY  (`userid`)
 ) ENGINE=MyISAM AUTO_INCREMENT=169 DEFAULT CHARSET=utf8;
+
 

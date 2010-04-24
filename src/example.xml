@@ -113,6 +113,10 @@
             <result name="success">/example/EditProfile.jsp</result>
             <result name="input">/example/EditProfile.jsp</result>
         </action>
+	
+	<action name="SetupSchema" class="example.SetupSchema">
+		<result name="success">/example/SetupSchema.jsp</result>
+	</action>
         
         <action name="test" class="example.test">
             <result>/example/Search.jsp</result>

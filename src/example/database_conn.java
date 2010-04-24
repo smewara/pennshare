@@ -11,6 +11,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
 
+import java.util.Scanner;
 
 /**
  * @author Siddharth
@@ -25,10 +26,6 @@ public class database_conn {
 
 	private static String url_connection = "jdbc:mysql://spam.seas.upenn.edu:3306/appdev2?user="+username+"&password="+password;
 
-	  {
-	       if (System.getenv().containsKey("PENNSHARE_JDBC"))
-		    url_connection = System.getenv().get("PENNSHARE_JDBC");
-	  }
 
 	private static Statement stmt, stmt1;
 	private static ArrayList<ArrayList<String>> return_results = new ArrayList<ArrayList<String>>();
@@ -36,6 +33,11 @@ public class database_conn {
      
      
      public static String getConnectionUrl () {
+	  if (database_conn.class.getResourceAsStream("/jdbc-url.txt") != null)
+	       url_connection = (new Scanner(database_conn.class.getResourceAsStream("/jdbc-url.txt"))).nextLine();
+	  else
+	       System.out.println("going for default mysql connection");
+
 	  return url_connection;
      }
 	/**
@@ -86,7 +88,7 @@ public class database_conn {
 			
 			try {
 				Class.forName("com.mysql.jdbc.Driver").newInstance();
-				con = DriverManager.getConnection(url_connection);
+				con = DriverManager.getConnection(getConnectionUrl());
 				
 				if(con!=null){
 					System.out.println("Connection etablished to the mysql server");
@@ -166,7 +168,7 @@ public class database_conn {
 			int last_insert_id = -1;
 			try {
 				Class.forName("com.mysql.jdbc.Driver").newInstance();
-				con = DriverManager.getConnection(url_connection);
+				con = DriverManager.getConnection(getConnectionUrl());
 				
 				if(con!=null){
 					System.out.println("Connection etablished to the mysql server");
@@ -204,7 +206,7 @@ public class database_conn {
 			
 			try {
 				Class.forName("com.mysql.jdbc.Driver").newInstance();
-				con = DriverManager.getConnection(url_connection);
+				con = DriverManager.getConnection(getConnectionUrl());
 				
 				if(con!=null){
 					System.out.println("Connection etablished to the mysql server");
@@ -243,7 +245,7 @@ public class database_conn {
 			
 			try {
 				Class.forName("com.mysql.jdbc.Driver").newInstance();
-				con1 = DriverManager.getConnection(url_connection);
+				con1 = DriverManager.getConnection(getConnectionUrl());
 				
 				if(con1 != null){
 
@@ -258,6 +260,23 @@ public class database_conn {
 				e.printStackTrace();
 			} 
 			return rs11;
+		}
+
+     public static void executeUpdate(String query) throws Exception {
+			
+
+				Class.forName("com.mysql.jdbc.Driver").newInstance();
+				con1 = DriverManager.getConnection(getConnectionUrl());
+				
+				if(con1 != null){
+
+					stmt1 = con1.createStatement();	
+					stmt1.addBatch(query);
+					stmt1.executeBatch();
+				}					
+				else
+					System.out.println("Connection failed . . . !!");
+				
 		}
 		
 		/**
