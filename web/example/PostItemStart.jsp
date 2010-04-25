@@ -57,9 +57,9 @@
 	<s:else>
 		<br>
 	</s:else>
-	<s:form action="PostItem">
+	<s:form method="POST" action="PostItem" enctype="multipart/form-data">
 		<b>Upload a file</b>
-		<s:file property="theFile" label="Select File"/>
+		<s:file name="theFile" label="Select File"/>
 	 	<s:textfield label="Title" name="title"/>
 		<s:submit/>
 	</s:form>

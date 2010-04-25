@@ -21,9 +21,7 @@ public class ItemDAO {
 	
 	public static int insertItem(Item item) {
 		
-		String query = "insert into items (name, price, duration, description, categoryid, textbookid, ownerid, createdate) VALUES ('" +
-				item.name + "','" + item.price + "','" + item.duration + "','" + item.description + "','" 
-				+ item.categoryid + "','" + item.textbookid + "','" + item.ownerid + "','" + dateFormat.format(new Date()) + "')";
+	    String query = "insert into items (title, content, ownerid) values (" + database_conn.quoteString(item.title)  + "," + database_conn.quoteString(item.contents) + ", 0)";
 		int itemid = database_conn.update_table(query);
 		database_conn.close_connections();
 		return itemid;

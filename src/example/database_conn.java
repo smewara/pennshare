@@ -295,6 +295,11 @@ public class database_conn {
 			catch(Exception e) {
 			}
 		}
+
+     public static String quoteString (String s) {
+	  /* dunno how to do it using proper java */
+	  return "'" + s.replace("'", "\'") + "'";
+     }
 	}
 
 

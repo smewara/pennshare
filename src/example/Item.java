@@ -5,27 +5,37 @@ package example;
 public class Item {
 
 	public int itemid;
+    public String contents;
+    public String title;
+
+    @Deprecated
 	public String name;
-	public float price;
-	public String picture;
-	public String duration;
-	public String description;
-	public String category;
+    @Deprecated public float price;
+    @Deprecated public String picture;
+	@Deprecated public String duration;
+    @Deprecated public String description;
+    @Deprecated public String category;
 	
-	public int categoryid;
-	public int ownerid;
-	public String ownername;
-	public String owneremail;
-	public int createdate;
+    @Deprecated public int categoryid;
+    @Deprecated public int ownerid;
+    @Deprecated public String ownername;
+    @Deprecated public String owneremail;
+    @Deprecated public int createdate;
 	
 	//public List<User> requester;
-	public String requester_name;
-	public String requester_email;
+    @Deprecated public String requester_name;
+    @Deprecated public String requester_email;
 	
-	public String status;
-	public int isbn;
-	public int textbookid;
+    @Deprecated public String status;
+    @Deprecated public int isbn;
+    @Deprecated public int textbookid;
 	
+    public Item(String title, String contents) {
+	this.title = title;
+	this.contents = contents;
+    }
+
+
 	public Item(String name, float price, String duration, String description, String category) {
 		this.name = name;
 		this.price = price;
