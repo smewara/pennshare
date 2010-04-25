@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:javaee="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" id="WebApp_9">
+<web-app xmlns:javaee="http://java.sun.com/xml/ns/javaee"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+   version="2.5"> 
+
   <javaee:display-name>Struts Blank</javaee:display-name>
   <filter>
     <filter-name>struts2</filter-name>
@@ -22,4 +26,11 @@
     <servlet-name>CreateSchema</servlet-name>
     <url-pattern>/CreateSchema</url-pattern>
   </servlet-mapping>
+<!-- <jsp-config>
+<jsp-property-group>
+<url-pattern>*.jsp</url-pattern>
+<scripting-invalid>false</scripting-invalid>
+<el-ignored>false</el-ignored>
+</jsp-property-group>
+</jsp-config> -->
 </web-app>
