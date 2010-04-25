@@ -30,11 +30,16 @@ public class Item {
     @Deprecated public int isbn;
     @Deprecated public int textbookid;
 	
-    public Item(String title, String contents) {
+    public Item(String title, String contents, User user) {
 	this.title = title;
 	this.contents = contents;
+	this.ownerid = user.userid;
     }
 
+    public Item(int itemid, String title) {
+	this.itemid = itemid;
+	this.title = title;
+    }
 
 	public Item(String name, float price, String duration, String description, String category) {
 		this.name = name;

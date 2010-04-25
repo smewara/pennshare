@@ -21,7 +21,7 @@ public class ItemDAO {
 	
 	public static int insertItem(Item item) {
 		
-	    String query = "insert into items (title, content, ownerid) values (" + database_conn.quoteString(item.title)  + "," + database_conn.quoteString(item.contents) + ", 0)";
+	    String query = "insert into items (title, content, ownerid) values (" + database_conn.quoteString(item.title)  + "," + database_conn.quoteString(item.contents) + ", " + item.ownerid + ")";
 		int itemid = database_conn.update_table(query);
 		database_conn.close_connections();
 		return itemid;
@@ -101,13 +101,13 @@ public class ItemDAO {
 	
 	public static List<Item> getItemByOwner(String email) {
 		List<Item> owned_items = new ArrayList<Item>();
-		ResultSet rs = database_conn.executeQuery("select i.name, i.itemid " + 
+		ResultSet rs = database_conn.executeQuery("select i.title, i.itemid " + 
 									"from items i " +
 									"inner join users u on u.userid = i.ownerid " +
-									"where i.isactive = 1 and u.email='" + email + "'");
+									"where u.email='" + email + "'");
 		try {
 			while(rs.next()) {
-				Item temp = new Item(rs.getString("name"), rs.getInt("itemid"));
+				Item temp = new Item(rs.getInt("itemid"), rs.getString("title"));
 				owned_items.add(temp);
 			}
 		} catch (SQLException e) {

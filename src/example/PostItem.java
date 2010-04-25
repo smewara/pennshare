@@ -48,7 +48,7 @@ public class PostItem extends ActionSupport{
 		    System.out.println(""+ e);
 		}
 
-		Item item = new Item(title, contents);
+		Item item = new Item(title, contents, user);
 		
 		ItemDAO.insertItem(item);
 		successful = true;
