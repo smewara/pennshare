@@ -22,15 +22,10 @@ INSERT INTO categories (name) ("algorithms"),("mathematics"),
 DROP TABLE IF EXISTS `items`;
 CREATE TABLE `items` (
   `itemid` integer NOT NULL auto_increment,
-  `name` varchar(200) NOT NULL,
-  `price` float default NULL,
-  `duration` varchar(10) default NULL,
-  `description` text,
-  `categoryid` integer NOT NULL,
-  `textbookid` integer default NULL,
+  `title` varchar(200) NOT NULL,
   `ownerid` integer NOT NULL,
-  `createdate` date NOT NULL,
-  `isactive` int(2) NOT NULL default '1',
+  `createdate` date default now(),
+  `content` mediumblob not null,
   PRIMARY KEY  (`itemid`)
 ) ENGINE=MyISAM AUTO_INCREMENT=76543548 DEFAULT CHARSET=utf8;
 

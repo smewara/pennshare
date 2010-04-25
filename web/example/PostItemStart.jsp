@@ -58,8 +58,9 @@
 		<br>
 	</s:else>
 	<s:form action="PostItem">
-	 	<s:textfield label="I would like to post ( ISBN for textbooks )" name="textbookname"/>
-	 	<s:select label="In" name="categoryid" list="categorylist" listKey="categoryid" listValue="name" />
+		<b>Upload a file</b>
+		<s:file property="theFile" label="Select File"/>
+	 	<s:textfield label="Title" name="title"/>
 		<s:submit/>
 	</s:form>
 </s:else>
