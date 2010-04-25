@@ -12,8 +12,8 @@ CREATE TABLE categories (
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- manual categories..
-INSERT INTO categories (name) ("algorithms"),("mathematics"),
-	("software engineering");
+-- INSERT INTO categories (name) ("algorithms"),("mathematics"),
+--	("software engineering")
 
 --
 -- Table structure for table `items`
@@ -24,7 +24,7 @@ CREATE TABLE `items` (
   `itemid` integer NOT NULL auto_increment,
   `title` varchar(200) NOT NULL,
   `ownerid` integer NOT NULL,
-  `createdate` date default now(),
+  `createdate` timestamp default CURRENT_TIMESTAMP,
   `content` mediumblob not null,
   PRIMARY KEY  (`itemid`)
 ) ENGINE=MyISAM AUTO_INCREMENT=76543548 DEFAULT CHARSET=utf8;
