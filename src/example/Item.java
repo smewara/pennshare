@@ -7,6 +7,7 @@ public class Item {
 	public int itemid;
     public String contents;
     public String title;
+    public int ownerid;
 
     @Deprecated
 	public String name;
@@ -17,7 +18,6 @@ public class Item {
     @Deprecated public String category;
 	
     @Deprecated public int categoryid;
-    @Deprecated public int ownerid;
     @Deprecated public String ownername;
     @Deprecated public String owneremail;
     @Deprecated public int createdate;

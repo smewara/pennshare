@@ -298,7 +298,7 @@ public class database_conn {
 
      public static String quoteString (String s) {
 	  /* dunno how to do it using proper java */
-	  return "'" + s.replace("'", "\'") + "'";
+	  return "'" + s.replace("'", "\\'") + "'";
      }
 	}
 
