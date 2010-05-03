@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.PreparedStatement;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -19,12 +20,34 @@ public class ItemDAO {
 	private static Statement stmt;
 	private static ResultSet rs;
 	
-	public static int insertItem(Item item) {
+	public static void insertItem(Item item) {
+	    PreparedStatement stmt;
+	    String query = "insert into items (title, content, ownerid) values (?, ?, ?)";
+	    // + database_conn.quoteString(item.title)  + "," + database_conn.quoteString(item.contents) + ", " + item.ownerid + ")";
+
+	    try {
+		Class.forName("com.mysql.jdbc.Driver").newInstance();
+		con = DriverManager.getConnection(database_conn.getConnectionUrl());
 		
-	    String query = "insert into items (title, content, ownerid) values (" + database_conn.quoteString(item.title)  + "," + database_conn.quoteString(item.contents) + ", " + item.ownerid + ")";
-		int itemid = database_conn.update_table(query);
-		database_conn.close_connections();
-		return itemid;
+		if(con!=null){
+		    System.out.println("Connection etablished to the mysql server");
+		    
+		    stmt = con.prepareStatement(query);
+		    stmt.setString(1, item.title);
+		    stmt.setString(2, item.contents);
+		    stmt.setInt(3, item.ownerid);
+		    
+		    stmt.executeUpdate();
+		    stmt.close();
+		}					
+		else
+		    System.out.println("Connection failed . . . !!");
+		
+	    } catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	    } 
+	    
 	}
 	
 	public static void insertUserOwnsItem(int itemid, String user_email) {
