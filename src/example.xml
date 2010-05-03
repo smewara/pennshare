@@ -126,6 +126,14 @@
             <result>/example/{1}.jsp</result>
         </action>
 
+	<action name="downloadFile" class="example.downloadFile">
+		<result name="success" type="stream">
+    			<param name="contentDisposition">attachment;filename=download</param>
+    			<param name="contentType">application/download</param>
+    			<param name="inputName">inputStream</param>
+    			<param name="bufferSize">1024</param>
+		</result>
+	</action>
         <!-- Add actions here -->
     </package>
 </struts>

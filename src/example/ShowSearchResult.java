@@ -30,7 +30,7 @@ public class ShowSearchResult extends ActionSupport {
 	public int keywordIndex = 0;
 	
 	public List<Category> categorylist = CategoryDAO.getAllCategories();
-	public List<String> bookname = new ArrayList<String>();
+	public List<Item> bookname = new ArrayList<Item>();
 	public int categoryid;
 	public int num=0;
 	public String message;
@@ -38,7 +38,7 @@ public class ShowSearchResult extends ActionSupport {
 	public int getNum() {
 		return num;
 	}
-	public List<String> getBookname()
+	public List<Item> getBookname()
 	{
 		return bookname;
 	}
@@ -83,7 +83,7 @@ public class ShowSearchResult extends ActionSupport {
 		System.out.println(namestring);
 		System.out.println(keywordString);
 		
-		String query2 = "select title, createdate, content " +
+		String query2 = "select title, createdate, content, ownerid " +
 						"from items where items.title REGEXP '"+ keywordString +"' ";
 		System.out.println(query2);
 		
@@ -91,7 +91,9 @@ public class ShowSearchResult extends ActionSupport {
 		try {
 			while(rs.next()){
 				String nametmp = rs.getString("items.title");
-				bookname.add(nametmp);
+				String contentmp = rs.getString("items.content");
+				Item tm = new Item(nametmp,contentmp);
+				bookname.add(tm);
 				num++;
 			}
 			
@@ -105,7 +107,6 @@ public class ShowSearchResult extends ActionSupport {
 			e.printStackTrace();
 		}
 		
-		System.out.println(bookname.toString());
 		return SUCCESS;
 	}
 
