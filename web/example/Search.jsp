@@ -31,7 +31,6 @@
 <s:form action="ShowSearchResult">
 	<b>${message}</b>
 	<font color="blue"><s:textfield label="I'm looking for" name="textbookname"/></font>
-	<s:select label="In" name="categoryid" list="categorylist" listKey="categoryid" listValue="name" />
 	<s:submit value="Search"/>
 </s:form>
 		 

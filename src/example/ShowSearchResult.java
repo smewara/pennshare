@@ -21,8 +21,6 @@ public class ShowSearchResult extends ActionSupport {
 	private static final long serialVersionUID = 1L;
 	
 	public String textbookname;
-	public List<User> owners = new ArrayList<User>();
-	public int numofowners;
 	public String requesteremail;
 	
 	public String[] textbooknameArray;
@@ -32,11 +30,18 @@ public class ShowSearchResult extends ActionSupport {
 	public int keywordIndex = 0;
 	
 	public List<Category> categorylist = CategoryDAO.getAllCategories();
-	
+	public List<String> bookname = new ArrayList<String>();
 	public int categoryid;
-	
+	public int num=0;
 	public String message;
 	
+	public int getNum() {
+		return num;
+	}
+	public List<String> getBookname()
+	{
+		return bookname;
+	}
 	public String execute() {
 		
 		//if(textbookname == null || textbookname.equals("")) {
@@ -48,7 +53,7 @@ public class ShowSearchResult extends ActionSupport {
 		
 		/* put textbookname into session */
 		ActionContext.getContext().getSession().put("search_keywords", textbookname);
-		ActionContext.getContext().getSession().put("categoryid", categoryid);
+		//ActionContext.getContext().getSession().put("categoryid", categoryid);
 		
 		/* requester email is current user */
 		requesteremail = (String)ActionContext.getContext().getSession().get("email");
@@ -78,37 +83,16 @@ public class ShowSearchResult extends ActionSupport {
 		System.out.println(namestring);
 		System.out.println(keywordString);
 		
-		String query2 = "select users.name, users.email, users.address, users.phone, " +
-						"users.dollar, users.trust, items.itemid, items.name, items.categoryid, textbooks.coverimage from users, items, textbooks where " +
-						"textbooks.textbookid = items.textbookid and " + 
-						"items.isactive = 1 and items.categoryid = " + categoryid + " and " +
-						"items.ownerid =users.userid and " + 
-						"users.email <> '" + requesteremail + "' and " + 
-						"items.name REGEXP '"+keywordString+"' " +
-						"order by users.name";
-
+		String query2 = "select title, createdate, content " +
+						"from items where items.title REGEXP '"+ keywordString +"' ";
 		System.out.println(query2);
 		
 		ResultSet rs = database_conn.executeQuery(query2);
 		try {
 			while(rs.next()){
-				String email = rs.getString("email");
-				String name = rs.getString("name");
-				String address = rs.getString("address");
-				String phone = rs.getString("phone");
-				float dollar = rs.getFloat("dollar");
-				float trust = rs.getFloat("trust");
-				int itemid = rs.getInt("itemid");
-				String itemname = rs.getString("items.name"); 
-				String itemimage = rs.getString("coverimage");
-				int categoryid = rs.getInt("categoryid");
-				User temp_user = new User(name, email, address, phone, dollar, trust, itemid, itemname, itemimage, categoryid);
-				owners.add(temp_user);
-			}
-			
-			// DEBUG
-			if(owners.size() > 10) {
-				owners = owners.subList(0, 10);
+				String nametmp = rs.getString("items.title");
+				bookname.add(nametmp);
+				num++;
 			}
 			
 			database_conn.close_connections();
@@ -121,8 +105,7 @@ public class ShowSearchResult extends ActionSupport {
 			e.printStackTrace();
 		}
 		
-		numofowners = owners.size();
-		
+		System.out.println(bookname.toString());
 		return SUCCESS;
 	}
 
