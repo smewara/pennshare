@@ -1,5 +1,6 @@
 package example;
 
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -34,7 +35,7 @@ public class ItemDAO {
 		    
 		    stmt = con.prepareStatement(query);
 		    stmt.setString(1, item.title);
-		    stmt.setString(2, item.contents);
+		    stmt.setBytes(2, item.contents.getBytes("ISO-8859-1"));
 		    stmt.setInt(3, item.ownerid);
 		    
 		    stmt.executeUpdate();

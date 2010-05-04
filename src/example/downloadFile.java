@@ -26,7 +26,7 @@ public class downloadFile extends ActionSupport {
 	public String execute () throws SQLException {
 		ResultSet rs = database_conn.executeQuery("select content from items where itemid=" + itemId);	
 		if (!rs.next()) return "failure";	
-		inputStream = new ByteArrayInputStream ((rs.getString("content")).getBytes());	
+		inputStream = new ByteArrayInputStream (rs.getBytes(1));	
 		return "success";	
 	}	
 	
