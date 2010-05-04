@@ -27,8 +27,8 @@
 <td width="50%"><center>
 	<b>You posted these items:</b><br><br>
 	<s:iterator id="entry" value="owned_items">
-		<a href="<s:url action="ShowItemProfile">
-			<s:param name="itemid"><s:property value="itemid"/></s:param>
+		<a href="<s:url action="downloadFile">
+			<s:param name="itemId" value="%{itemid}"><s:property value="itemid"/></s:param>
 			<s:param name="title"><s:property value="name"/></s:param>
 		 </s:url>" target = "_blank"><s:property value="title"/></a>
 		<br><br>
