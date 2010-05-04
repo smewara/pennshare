@@ -36,9 +36,10 @@ public class Item {
 	this.ownerid = user.userid;
     }
 
-	public Item(String title, String contents) {
+	public Item(String title, String contents, int itemid) {
 		this.title = title;
 		this.contents = contents;
+		this.itemid = itemid;
 	}
 
     public Item(int itemid, String title) {

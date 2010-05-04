@@ -36,9 +36,8 @@
 <s:iterator var="book" value="bookname">
 
 	<br>
-    <b><big><s:property value="title"/></big></b><a href = "<s:url action="downloadFile">
-								<s:param name="t" value="%{title}"/></s:url>">Download</a>
-	<pre><s:property value="contents"/></pre>
+    <b><big><s:property value="title"/></big></b><pre></pre><a href = "<s:url action="downloadFile">
+								<s:param name="itemId" value="%{itemid}"/></s:url>">Download</a>
     <hr>
 </s:iterator>
 <br>

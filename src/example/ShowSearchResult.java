@@ -83,7 +83,7 @@ public class ShowSearchResult extends ActionSupport {
 		System.out.println(namestring);
 		System.out.println(keywordString);
 		
-		String query2 = "select title, createdate, content, ownerid " +
+		String query2 = "select * " +
 						"from items where items.title REGEXP '"+ keywordString +"' ";
 		System.out.println(query2);
 		
@@ -92,7 +92,8 @@ public class ShowSearchResult extends ActionSupport {
 			while(rs.next()){
 				String nametmp = rs.getString("items.title");
 				String contentmp = rs.getString("items.content");
-				Item tm = new Item(nametmp,contentmp);
+				int id = rs.getInt("items.itemid");
+				Item tm = new Item(nametmp,contentmp,id);
 				bookname.add(tm);
 				num++;
 			}

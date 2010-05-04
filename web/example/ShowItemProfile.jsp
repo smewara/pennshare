@@ -16,25 +16,14 @@
 <center><font color="darkblue">
 <big><b>${itemname}</b></big>
 
-<s:if test="textbooklist != null">
-	<hr>
-	<s:iterator value="textbooklist">
-		<table><tr>
-			<td align="left"><font color="darkblue">
-				<b>Title</b>: <s:property value="title" />
-				<br>
-				<b>Author</b>: <s:property value="author" />
-				<br>
-				<b>Publisher</b>: <s:property value="publisher" />
-				<br>
-				<b>ISBN</b>: <s:property value="isbn" />
-			</font></td>
-			<td><center>
-				<img src="<s:property value="coverimage" />" />
-			</center></td>
-		</tr></table>
-	</s:iterator>
-</s:if>
+<s:iterator var="book" value="bookname">
+
+	<br>
+    <b><big><s:property value="title"/></big></b><pre></pre><a href = "<s:url action="downloadFile">
+								<s:param name="itemId" value="%{itemid}"/></s:url>">Download</a>
+    <hr>
+</s:iterator>
+<br>
 
 <br><br>
 <a href="javascript:self.close();">Close Window</a></li>
