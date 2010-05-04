@@ -144,7 +144,7 @@ public class ItemDAO {
 	}
 	
 	public static void deleteItemByItemID(int itemid) {
-		String query = "update items set isactive = 0 where itemid = " + itemid;
+		String query = "delete from items where itemid = " + itemid;
 		database_conn.update_table(query);
 		database_conn.close_connections();
 	}
