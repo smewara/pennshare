@@ -39,7 +39,7 @@
 		<br>
 	</s:else>
 	<s:form action="DeleteItem">
-	 	<s:select label="I would like to delete" name="itemid" list="owned_items" listKey="itemid" listValue="name" />
+	 	<s:select label="I would like to delete" name="itemid" list="owned_items" listKey="itemid" listValue="title" />
 		<s:submit value="Delete"/>
 	</s:form>
 </s:else>
